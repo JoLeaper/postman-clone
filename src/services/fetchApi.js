@@ -1,9 +1,11 @@
 export const fetchApi = (api, method, body) => {
-  let fetchedData;
   if(body) {
     return fetch(`${api}`, {
       method: `${method}`,
-      body: `${body}`
+      body: `${body}`,
+      headers: {
+        "Content-type": "application/json"
+      }
   })
   .then(res => res.json()) 
   } else {
