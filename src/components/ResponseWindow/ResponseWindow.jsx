@@ -1,5 +1,5 @@
 import React from 'react';
 
-export const ResponseWindow = () => (
-  <h1>This is where ResponseWindow will go</h1>
+export const ResponseWindow = ({ response }) => (
+  <textarea readOnly style={{ width: 500, height: 200 }} name="responseWindow" value={response} />
 );

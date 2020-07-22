@@ -7,8 +7,8 @@ export default class MainContainer extends Component {
   state = {
     apiLink: '',
     requestMethod: 'GET',
-    requestBody: {},
-    response: {}
+    requestBody: '',
+    response: ''
   }
 
   handleChange = (e) => {
@@ -31,7 +31,6 @@ export default class MainContainer extends Component {
         requestMethod={requestMethod}
         />
         <ResponseWindow 
-        handleChange={this.handleChange} 
         response={response} 
         />
       </div>

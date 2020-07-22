@@ -20,5 +20,7 @@ export const RequestContent = ({ requestBody, requestMethod, handleChange }) => 
       <input type="radio" name="requestMethod" value="DELETE"/>
     </label>
   </form>
+
+  <textarea type="text" style={{ width: 500, height: 200 }} name="requestBody" value={requestBody} onChange={handleChange}/>
   </>
 );
