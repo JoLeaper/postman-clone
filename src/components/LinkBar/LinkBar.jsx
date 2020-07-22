@@ -1,5 +1,5 @@
 import React from 'react';
 
-export const LinkBar = () => (
-  <h1>This is where LinkBar will go</h1>
+export const LinkBar = ({ handleChange, apiLink }) => (
+  <input type="text" name="apiLink" value={apiLink} onChange={handleChange} />
 );
