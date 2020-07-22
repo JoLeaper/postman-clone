@@ -1,24 +1,25 @@
 import React from 'react';
 
-export const RequestContent = ({ requestBody, requestMethod, handleChange }) => (
+export const RequestContent = ({ requestBody, handleChange, handleSubmit }) => (
   <>
-  <form onChange={handleChange}>
+  <form onChange={handleChange} onSubmit={handleSubmit}>
     <label>
-      <p>GET</p>
+      <span>GET</span>
       <input type="radio" name="requestMethod" value="GET"/>
     </label>
     <label>
-      <p>POST</p>
+      <span>POST</span>
       <input type="radio" name="requestMethod" value="POST"/>
     </label>
     <label>
-      <p>PUT</p>
+      <span>PUT</span>
       <input type="radio" name="requestMethod" value="PUT"/>
     </label>
     <label>
-      <p>DELETE</p>
+      <span>DELETE</span>
       <input type="radio" name="requestMethod" value="DELETE"/>
     </label>
+    <button>Submit</button>
   </form>
 
   <textarea type="text" style={{ width: 500, height: 200 }} name="requestBody" value={requestBody} onChange={handleChange}/>
