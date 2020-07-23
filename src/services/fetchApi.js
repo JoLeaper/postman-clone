@@ -4,15 +4,16 @@ export const fetchApi = (api, method, body) => {
       method: `${method}`,
       body: `${body}`,
       headers: {
-        "Content-type": "application/json"
+        'Content-type': 'application/json'
       }
-  })
-  .then(res => res.json()) 
+    })
+      .then(res => res.json()); 
   } else {
     return fetch(`${api}`, {
       method: `${method}`
-  })
-  .then(res => res.json())
+    })
+      .then(res => res.json());
   }
 
 }
+;

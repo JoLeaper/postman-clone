@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { LinkBar } from '../components/LinkBar/LinkBar'
-import { RequestContent } from '../components/RequestContent/RequestContent'
-import { ResponseWindow } from '../components/ResponseWindow/ResponseWindow'
-import { fetchApi } from '../services/fetchApi'
+import React, { Component } from 'react';
+import { LinkBar } from '../components/LinkBar/LinkBar';
+import { RequestContent } from '../components/RequestContent/RequestContent';
+import { ResponseWindow } from '../components/ResponseWindow/ResponseWindow';
+import { fetchApi } from '../services/fetchApi';
 
 export default class MainContainer extends Component {
   state = {
@@ -22,9 +22,9 @@ export default class MainContainer extends Component {
     e.preventDefault();
     const { apiLink, requestMethod, requestBody } = this.state;
     fetchApi(apiLink, requestMethod, requestBody)
-    .then(res => { 
-      this.setState({ response: res })
-    })
+      .then(res => { 
+        this.setState({ response: res });
+      });
   }
 
   render() {
@@ -32,19 +32,19 @@ export default class MainContainer extends Component {
     return (
       <div>
         <LinkBar 
-        handleChange={this.handleChange} 
-        apiLink={apiLink}
+          handleChange={this.handleChange} 
+          apiLink={apiLink}
         />
         <RequestContent 
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit} 
-        requestBody={requestBody} 
-        requestMethod={requestMethod}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit} 
+          requestBody={requestBody} 
+          requestMethod={requestMethod}
         />
         <ResponseWindow 
-        response={response} 
+          response={response} 
         />
       </div>
-    )
+    );
   }
 }
