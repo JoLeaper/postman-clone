@@ -12,13 +12,13 @@ describe('RequestContent component', () => {
     handleSubmit = jest.fn();
 
     wrapper = shallow(<RequestContent
-      requestBody = {{ name: '1' }} 
+      requestBody = '{ name: 1 }' 
       handleChange={handleChange}
       handleSubmit={handleSubmit}
     />);
+  });    
 
-    it('expects the request body to be something', () => {
-      
-    });
+  it('expects the request body to be something', () => {
+    expect(wrapper.find('textarea')).toHaveLength(1);
   });
 });

@@ -4,7 +4,7 @@ import { ResponseWindow } from '../ResponseWindow/ResponseWindow';
 
 describe('ResponseWindow component', () => {
   let wrapper;
-  let response = { this: 'is an example' };
+  let response = '{ this: is an example }';
 
   beforeEach(() => {
     wrapper = shallow(<ResponseWindow 
@@ -13,7 +13,10 @@ describe('ResponseWindow component', () => {
   });
 
   it('has textarea named name who\'s value is the name prop', () => {
-    expect(wrapper.find('textarea[name="responseWindow"]').prop('value')).toEqual('{"this":"is an example"}');
+    expect(wrapper.find('textarea[name="responseWindow"]').prop('value')).toEqual('"{ this: is an example }"');
+  });
+  it('expects the response window to have a textarea', () => {
+    expect(wrapper.find('textarea')).toHaveLength(1);
   });
 
   // it('invokes the onChange prop when we change the name of the input', () => {
