@@ -9,7 +9,7 @@ export default class MainContainer extends Component {
     apiLink: '',
     requestMethod: 'GET',
     requestBody: '',
-    response: ''
+    response: null
   }
 
   handleChange = (e) => {
