@@ -19,9 +19,4 @@ describe('ResponseWindow component', () => {
     expect(wrapper.find('textarea')).toHaveLength(1);
   });
 
-  // it('invokes the onChange prop when we change the name of the input', () => {
-  //   wrapper.find('input[name="apiLink"]').simulate('change');
-  //   expect().toHaveBeenCalledTimes(1);
-  // });
-
 });

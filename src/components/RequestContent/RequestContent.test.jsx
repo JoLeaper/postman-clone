@@ -21,4 +21,14 @@ describe('RequestContent component', () => {
   it('expects the request body to be something', () => {
     expect(wrapper.find('textarea')).toHaveLength(1);
   });
+
+  it('invokes the onChange prop when we change the name of the textarea', () => {
+    wrapper.find('textarea[name="requestBody"]').simulate('change');
+    expect(handleChange).toHaveBeenCalledTimes(1);
+  });
+
+  it('invokes the onSubmit prop when we click submit', () => {
+    wrapper.find('form').simulate('submit');
+    expect(handleSubmit).toHaveBeenCalledTimes(1);
+  });
 });
